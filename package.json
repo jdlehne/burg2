@@ -1,0 +1,36 @@
+{
+  "name": "eat_a_burger",
+  "version": "1.0.0",
+  "description": "app using node, express, mySQL and handlebars",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdlehne/burger.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mySQL",
+    "handlebars"
+  ],
+  "author": "josh lehne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdlehne/burger/issues"
+  },
+  "homepage": "https://github.com/jdlehne/burger#readme",
+  "dependencies": {
+    "body": "^5.1.0",
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.9",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.4.2",
+    "parser": "^0.1.4"
+  }
+}
