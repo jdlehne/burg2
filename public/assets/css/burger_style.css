@@ -39,3 +39,13 @@ ul {
 .list-group-item > button.delete{
   float:right;
 }
+
+.new-burg{
+  height: 35px;
+font-size: 17px;
+}
+
+#addBtn{
+  height:35px;
+  length:80px;
+}

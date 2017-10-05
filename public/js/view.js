@@ -7,7 +7,7 @@ $(document).ready(function() {
   $(document).on("click", "button.delete", eatBurger);
 
   getBurgers(); // displays all uneaten in database //
-  chomped();//displays eaten burgz---//
+  chomped(); //displays eaten burgz---//
 
   // This function grabs burgers from the database to display
   function getBurgers() {
@@ -40,7 +40,7 @@ $(document).ready(function() {
           var newRow = $([
             "<li class='list-group-item burger-item'>",
             "<span>",
-            data[i].burger_name,
+            data[i].id + ". " + data[i].burger_name,
             "</span>",
             "</li>",
             "<hr>"
@@ -66,26 +66,38 @@ $(document).ready(function() {
 
 ///---eat burgz
 
-console.log("eating burger");
-
-function eatBurger(){
-//  $.put("api/burgers/:id", function(data){
-    var id = $(this).data("id");
+function eatBurger(getBurgers) {
+  console.log("eating burger");
+    var id = $(this).data.id;
+    console.log(id);
     $.ajax({
       method: "PUT",
       url: "/api/burgers/" + id,
-      devoured:true
+      devoured: true
     }).done(getBurgers);
-  //});
 }
 
 
-/*function eatBurger(burger) {
+/*
+
+function eatBurger(burger) {
   $.ajax({
     method: "PUT",
     url: "/api/burgers",
     data: burger
   }).done(getBurgers);
+
+
+  function eatBurger(event) {
+    event.preventDefault();
+    var id = $(this).data("id");
+    var burger = {
+      burger_name: id,
+      devoured: true
+    };
+
+    $.post("/api/burgers", burger, getBurgers);
+  }
 }*/
 
 /////////////----WORKING ABOVE-------//////////////////
