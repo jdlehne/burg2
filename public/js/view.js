@@ -25,6 +25,7 @@ $(document).ready(function() {
             "</li>",
             "<hr>"
           ].join(""));
+          newRow.find("button.delete").attr("id", data[i].id);
           $("#eatBurgs").append(newRow);
         }
       }
@@ -65,39 +66,15 @@ $(document).ready(function() {
 });
 
 ///---eat burgz
-
-function eatBurger(getBurgers) {
+function eatBurger(event, getBurgers) {
   console.log("eating burger");
-    var id = $(this).data.id;
+    var id = $(this).attr("id");
     console.log(id);
     $.ajax({
       method: "PUT",
       url: "/api/burgers/" + id,
       devoured: true
-    }).done(getBurgers);
+    }).then(getBurgers);
+    location.reload();
+
 }
-
-
-/*
-
-function eatBurger(burger) {
-  $.ajax({
-    method: "PUT",
-    url: "/api/burgers",
-    data: burger
-  }).done(getBurgers);
-
-
-  function eatBurger(event) {
-    event.preventDefault();
-    var id = $(this).data("id");
-    var burger = {
-      burger_name: id,
-      devoured: true
-    };
-
-    $.post("/api/burgers", burger, getBurgers);
-  }
-}*/
-
-/////////////----WORKING ABOVE-------//////////////////
