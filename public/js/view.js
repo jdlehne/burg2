@@ -3,8 +3,8 @@ $(document).ready(function() {
   var newBurger = $("input.new-burg");
   var ateBurg = $("#ateBurg");
 
-  $(document).on("submit", "#add-form", addBurger);
-  $(document).on("click", "button.delete", eatBurger);
+  $(document).on("submit", "#add-form", addBurger);//---button to add burger
+  $(document).on("click", "button.delete", eatBurger);//--devour button to delete from available and send to eaten
 
   getBurgers(); // displays all uneaten in database //
   chomped(); //displays eaten burgz---//
@@ -31,7 +31,7 @@ $(document).ready(function() {
       }
     });
   }
-
+//---Sends the burger to the eaten section after "devour"
   function chomped() {
     $.get("/api/burgers", function(data) {
       //  console.log(data);
@@ -65,7 +65,7 @@ $(document).ready(function() {
   }
 });
 
-///---eat burgz
+///---eat burgz-----///
 function eatBurger(event, getBurgers) {
   console.log("eating burger");
     var id = $(this).attr("id");
@@ -73,7 +73,7 @@ function eatBurger(event, getBurgers) {
     $.ajax({
       method: "PUT",
       url: "/api/burgers/" + id,
-      devoured: true
+      devoured: true,
     }).then(getBurgers);
     location.reload();
 

@@ -34,7 +34,7 @@ module.exports = function(app) {
   // PUT route for updating burgers.
   app.put("/api/burgers/:id", function(req, res) {
     db.Burgers.update({
-      burger_name: req.body.burger_name,
+      //burger_name: req.body.burger_name,
       devoured:true
     }, {
       where: {
