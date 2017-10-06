@@ -15,7 +15,7 @@
     "node",
     "express",
     "mySQL",
-    "handlebars"
+    "sequelize"
   ],
   "author": "josh lehne",
   "license": "ISC",
@@ -27,10 +27,13 @@
     "body": "^5.1.0",
     "body-parser": "^1.18.1",
     "express": "^4.15.4",
-    "express-handlebars": "^3.0.0",
     "method-override": "^2.3.9",
     "mysql": "^2.14.1",
     "mysql2": "^1.4.2",
     "parser": "^0.1.4"
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
   }
 }
