@@ -30,7 +30,8 @@
     "method-override": "^2.3.9",
     "mysql": "^2.14.1",
     "mysql2": "^1.4.2",
-    "parser": "^0.1.4"
+    "parser": "^0.1.4",
+    "sequelize": "^3.22.0"
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
