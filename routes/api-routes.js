@@ -16,7 +16,6 @@ module.exports = function(app) {
   app.get("/api/burgers", function(req, res) {
     db.Burgers.findAll({}).then(function(dbBurgers) {
       res.json(dbBurgers);
-    //  console.log("From get in routes: " + dbBurgers);
     });
   });
 
